@@ -11,15 +11,15 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import openpyxl
 
-# Load data
+# Đọc dữ liệu
 df = pd.read_csv(".\\data_sets\\bodyfat.csv")
 df = df.dropna()
 
-# Define input features and target variable
+# Xác định các đặc trưng đầu vào và biến mục tiêu
 X = df[['Density', 'Age', 'Chest', 'Abdomen']]
 y = df['BodyFat']
 
-# Split data into training and testing sets
+# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 scaler = StandardScaler()
@@ -28,23 +28,23 @@ X_test_scaled = scaler.transform(X_test)
 
 kf = KFold(n_splits=5, shuffle=True, random_state=29)
 
-# Create and train the model
+# Tạo và huấn luyện mô hình
 model = LinearRegression()
 model.fit(X__trained_scaled, y_train)
 
-# Make predictions
+# Dự đoán giá trị
 y_pred = model.predict(X_test_scaled)
 Y = np.array(y_test)
 
-# Calculate metrics
+# Tính toán các chỉ số đánh giá
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
-cv_ = cross_val_score(model, X, y,cv=5).mean()
+cv_ = cross_val_score(model, X, y, cv=5).mean()
 print("MSE = %f" % mse)
 print("R2 = %f" % r2)
 print("CV = %f" % cv_)
 
-# Create a DataFrame for the actual, predicted, and difference values
+# Tạo DataFrame để lưu trữ giá trị thực tế, dự đoán, và độ chênh lệch
 result_df = pd.DataFrame({
     'Actual': Y,
     'Predicted': y_pred,
@@ -54,17 +54,17 @@ result_df = pd.DataFrame({
     'Cross-Validation Score': cv_
 })
 
-# Export the DataFrame to an Excel file
-result_df.to_excel(".\\results\\BodyFat_Linear_Regression.xlsx", index=False)
+# Xuất DataFrame ra tệp Excel
+# result_df.to_excel(".\\results\\BodyFat_Linear_Regression.xlsx", index=False)
 
-#  Print the differences (optional)
+# In ra độ chênh lệch giữa giá trị thực tế và dự đoán (tùy chọn)
 for i in range(0, len(Y)):
     print('{:.3f} \t\t {:.3f} \t\t {:.3f}'.format(Y[i], y_pred[i], abs(Y[i] - y_pred[i])))
 
-# Plot the comparison between actual and predicted values
+# Vẽ biểu đồ so sánh giữa giá trị thực tế và dự đoán
 plt.figure(figsize=(10, 6))
-plt.plot(y_test.values, label='Actual BodyFat', marker='o', color='b')
-plt.plot(y_pred, label='Predicted BodyFat', linestyle='--', marker='x', color='r')
+plt.plot(y_test.values, label='Giá trị thực tế BodyFat', marker='o', color='b')
+plt.plot(y_pred, label='Dự đoán BodyFat', linestyle='--', marker='x', color='r')
 plt.title("So sánh giữa giá trị thực tế và dự đoán")
 plt.xlabel("Số lượng mẫu")
 plt.ylabel("BodyFat")
@@ -72,18 +72,18 @@ plt.legend()
 plt.grid()
 plt.show()
 
+# Uncomment để vẽ Learning Curve nếu cần
 # train_sizes, train_scores, test_scores = learning_curve(model, X_train, y_train, cv=5)
 
 # train_mean = np.mean(train_scores, axis=1)
 # test_mean = np.mean(test_scores, axis=1)
 
-# plt.plot(train_sizes, train_mean, label='Training Score', color='b')
-# plt.plot(train_sizes, test_mean, label='Cross-Validation Score', color='r')
+# plt.plot(train_sizes, train_mean, label='Điểm huấn luyện', color='b')
+# plt.plot(train_sizes, test_mean, label='Điểm kiểm tra chéo', color='r')
 
 # plt.title('Learning Curve')
-# plt.xlabel('Training Size')
-# plt.ylabel('Score')
+# plt.xlabel('Kích thước tập huấn luyện')
+# plt.ylabel('Điểm')
 # plt.legend(loc='best')
 # plt.grid()
 # plt.show()
-
