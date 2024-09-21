@@ -13,7 +13,7 @@ age = st.number_input('Tuổi', min_value=20, max_value=65, value=20, step=1)  #
 gender = st.radio('Giới tính', ('Nam', 'Nữ'))  # Chọn giới tính
 education_level = st.selectbox('Chọn trình độ học vấn:', 
                                 ("Cử nhân(Bachelor's)", "Thạc sĩ(Master's)", "Tiến sĩ(PhD)")) # Chọn trình độ học vấn
-years_of_experience = st.number_input('Số năm kinh nghiệm', min_value=0.0, max_value=age-14, value=0.0, step=1.0)  # Nhập số năm kinh nghiệm
+years_of_experience = st.number_input('Số năm kinh nghiệm', min_value=0.0, max_value=float(age-14), value=0.0, step=1.0)  # Nhập số năm kinh nghiệm
 model_type = st.selectbox('Chọn mô hình dự đoán:',
                     ("Linear Regression", "Lasso", "Neuron Network", "Stacking")) # Chọn mô hình dự đoán
 
