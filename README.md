@@ -3,5 +3,7 @@
 Sử dụng phương pháp học kết hợp Bagging hoặc Stacking để xây dựng mô hình học kết hợp cho bài toán.
 Viết giao diện người dùng (website) cho mô hình tốt nhất của mỗi đề tài, cho phép nhập vào dữ liệu mới để mô hình dự đoán kết quả của dữ liệu mới này. Trên form có hiển thị các thông tin về độ tin cậy của mô hình dự đoán. 
 
+**_Copy and run this:_** pip install -r requirements.txt
+
 # Kaggle link:
 https://www.kaggle.com/code/iwant2dye8976/predicting-salary
