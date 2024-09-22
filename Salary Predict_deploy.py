@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import requests
 
 # Tiêu đề cho ứng dụng web
 st.title('DỰ ĐOÁN LƯƠNG')
@@ -24,8 +25,9 @@ phd = 1 if education_level == "Tiến sĩ(PhD)" else 0
 train_model = "Linear Regression" if model_type=="Linear Regression" else "Lasso" if model_type=="Lasso" else "Neuron Network" if model_type=="Neuron Network" else "Stacking"
 # Hàm tải mô hình
 def load_model(type):
-    with open(f'trained models/{type}_model.pkl', 'rb') as file:
-        model = pickle.load(file)  # Tải mô hình từ file
+    url = f'https://github.com/Iwant2dye8976/Machine-Learning/tree/81113bc944cd526a428e4702282a82da86952e21/trained%20models/{type}_model.pkl'
+    response = requests.get(url)
+    model = pickle.loads(response.content)
     return model
 
 # Tải mô hình
