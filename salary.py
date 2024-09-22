@@ -30,7 +30,6 @@ df = pd.read_csv(".\\data_sets\\Salary Data.csv")
 # Xử lý dữ liệu
 df = df.dropna()  # Bỏ các dòng có giá trị NaN
 df.drop_duplicates(inplace=True)  # Bỏ các dòng trùng lặp
-df = df.drop(['Job Title'], axis=1)  # Bỏ cột 'Job Title'
 
 # Xử lý dữ liệu cho cột 'Education Level' và 'Gender'
 df = pd.get_dummies(df, columns=["Education Level", "Gender"], drop_first=True) * 1
@@ -111,6 +110,5 @@ if __name__ == "__main__":
     # In kết quả đánh giá mô hình sắp xếp giảm dần theo 5-Fold CV
     print(evaluation_sorted)
 
-    #Lưu kết quả vào folder results
+    #Lưu kết quả so sánh vào folder results
     evaluation_sorted.to_excel(".\\results\\KQ_danh_gia.xlsx", index=False)
-
