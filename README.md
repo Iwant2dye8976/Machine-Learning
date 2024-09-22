@@ -17,6 +17,7 @@ https://www.kaggle.com/code/iwant2dye8976/predicting-salary
 ![image](https://github.com/user-attachments/assets/b02fdfab-a193-4b76-bd17-b0759f049512)
 
 **_Thông số cụ thể_**
+
 ![image](https://github.com/user-attachments/assets/704f545d-0e88-4c13-935a-ddbb06513a46)
 
 
