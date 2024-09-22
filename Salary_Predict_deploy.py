@@ -25,7 +25,7 @@ phd = 1 if education_level == "Tiến sĩ(PhD)" else 0
 train_model = "Linear Regression" if model_type=="Linear Regression" else "Lasso" if model_type=="Lasso" else "Neuron Network" if model_type=="Neuron Network" else "Stacking"
 # Hàm tải mô hình
 def load_model(type):
-    url = f'https://github.com/Iwant2dye8976/Machine-Learning/tree/81113bc944cd526a428e4702282a82da86952e21/trained%20models/{type}_model.pkl'
+    url = f'https://raw.githubusercontent.com/Iwant2dye8976/Machine-Learning/81113bc944cd526a428e4702282a82da86952e21/trained%20models/{type}_model.pkl'
     response = requests.get(url)
     model = pickle.loads(response.content)
     return model
