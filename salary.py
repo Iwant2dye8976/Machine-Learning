@@ -21,7 +21,6 @@ evaluation = pd.DataFrame({
     'Mean Absolute Error (MAE)': [],
     'R-squared (training)': [],
     'R-squared (test)': [],
-    'Nash-Sutcliffe Efficiency(NSE)': []
 })
 
 # Tải dữ liệu
@@ -30,6 +29,9 @@ df = pd.read_csv(".\\data_sets\\Salary Data.csv")
 # Xử lý dữ liệu
 df = df.dropna()  # Bỏ các dòng có giá trị NaN
 df.drop_duplicates(inplace=True)  # Bỏ các dòng trùng lặp
+
+# Loại bỏ cột 'Job Title'
+df = df.drop(['Job Title'],axis=1)
 
 # Xử lý dữ liệu cho cột 'Education Level' và 'Gender'
 df = pd.get_dummies(df, columns=["Education Level", "Gender"], drop_first=True) * 1
@@ -66,18 +68,6 @@ trains = {
 # Chia dữ liệu thành tập huấn luyện và tập kiểm tra
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-def nash_sutcliffe_efficiency(y_true, y_pred):
-    #Hàm tính Nash-Sutcliffe Efficiency (NSE)
-    # Tính số dư bình phương của dự đoán
-    numerator = np.sum((y_true - y_pred) ** 2)
-    
-    # Tính số dư bình phương của trung bình giá trị thực tế
-    denominator = np.sum((y_true - np.mean(y_true)) ** 2)
-    
-    # Tính NSE
-    nse = 1 - numerator / denominator
-    
-    return nse
 
 # Hàm huấn luyện mô hình
 def Model_Train(model, X_train, X_test, y_train, y_test, model_name):
@@ -89,8 +79,7 @@ def Model_Train(model, X_train, X_test, y_train, y_test, model_name):
     mae = mean_absolute_error(y_test, y_pred_test)
     r2_train = r2_score(y_train, y_pred_train)  # Tính R² trên tập huấn luyện
     r2_test = r2_score(y_test, y_pred_test)  # Tính R² trên tập kiểm tra
-    nse = nash_sutcliffe_efficiency(y_test, y_pred_test)
-    evaluation.loc[len(evaluation)] = [model_name, rmse, mae, r2_train, r2_test, nse]  # Lưu kết quả vào DataFrame
+    evaluation.loc[len(evaluation)] = [model_name, rmse, mae, r2_train, r2_test]  # Lưu kết quả vào DataFrame
 
     # Lưu mô hình nếu điều kiện thỏa mãn
     if (r2_test > .7):
