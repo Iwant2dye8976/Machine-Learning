@@ -14,7 +14,8 @@ https://www.kaggle.com/code/iwant2dye8976/predicting-salary
 
 **_So sánh độ hiệu quả của các mô hình_**
 
-![image](https://github.com/user-attachments/assets/44db9a80-977d-43a3-b6a7-383eb4b52138)
+![image](https://github.com/user-attachments/assets/aaf0d209-629e-4f83-a793-2b6b6367febe)
+
 
 **R2 của các mô hình chênh lệch không nhiều, xấp xỉ 0.89**
 **RMSE trung bình khoảng 14292.472**
