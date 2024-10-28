@@ -36,7 +36,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 kfold = KFold(n_splits=5, shuffle=True, random_state=42)
 
-model = MLPRegressor(hidden_layer_sizes=(100, ), activation="relu", alpha=0.001, learning_rate="constant", solver="lbfgs" , max_iter=1000 ,random_state=42)
+model = MLPRegressor(hidden_layer_sizes=(100, ), activation="relu", alpha=0.001, 
+                     learning_rate="constant", solver="lbfgs" , max_iter=1000 ,random_state=42)
 
 #Dùng GridSearchCV để tìm tham số tốt nhất
 

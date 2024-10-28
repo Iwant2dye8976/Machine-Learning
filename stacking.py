@@ -39,11 +39,11 @@ y = df["Salary"]  # Biến mục tiêu
 base_learners = [
     ('lr', LinearRegression()),
     ('lasso', Lasso(alpha=10)),
-    ('mlp', MLPRegressor(hidden_layer_sizes=(100,), activation="relu", alpha=0.001, learning_rate="constant", solver="lbfgs" ,max_iter=1000 ,random_state=42))
+    ('mlp', MLPRegressor(hidden_layer_sizes=(100,), activation="relu", alpha=0.001, 
+                         learning_rate="constant", solver="lbfgs" ,max_iter=1000 ,random_state=42))
 ]
 # Định nghĩa mô hình meta-learner
 meta_model = Lasso(alpha=10)
-# meta_model = LinearRegression()
 
 
 # Chia dữ liệu thành tập huấn luyện và tập kiểm tra
