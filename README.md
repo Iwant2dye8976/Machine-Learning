@@ -14,38 +14,22 @@ https://www.kaggle.com/code/iwant2dye8976/predicting-salary
 
 **_So sánh độ hiệu quả của các mô hình_**
 
-![image](https://github.com/user-attachments/assets/b02fdfab-a193-4b76-bd17-b0759f049512)
+![image](https://github.com/user-attachments/assets/aaf0d209-629e-4f83-a793-2b6b6367febe)
+
+
+**R2 của các mô hình chênh lệch không nhiều, xấp xỉ 0.89**
+**RMSE trung bình khoảng 14292.472**
 
 **_Thông số cụ thể_**
 
-![image](https://github.com/user-attachments/assets/704f545d-0e88-4c13-935a-ddbb06513a46)
-
-
-**_So sánh giá trị dự đoán với giá trị thực tế_**
-
-_Linear Regression_
-
-![image](https://github.com/user-attachments/assets/eb2fbb1e-4f8e-47bd-84e8-f41da4708a01)
-
-_Lasso_
-
-![image](https://github.com/user-attachments/assets/28bcbad6-4280-4a1a-8e59-11844284d3d6)
-
-_Neuron Network_
-
-![image](https://github.com/user-attachments/assets/7f82a322-e5d6-4c22-b209-7942651af164)
-
-_Stacking Regression_
-
-![image](https://github.com/user-attachments/assets/014f99e5-dba7-4d41-b3ff-5f4e941f5697)
+![image](https://github.com/user-attachments/assets/b133b474-425a-45ae-a582-4ffd4f75be5a)
 
 **_Đường học tập_**
 
-![image](https://github.com/user-attachments/assets/fd157131-83cc-4855-8420-5f1bb2024ce6)
+![image](https://github.com/user-attachments/assets/a85e42dc-6f8c-4724-8841-6d55f8c27b70)
 
-![image](https://github.com/user-attachments/assets/cb5e9497-a8ee-4484-b07a-aad290c16b91)
+![image](https://github.com/user-attachments/assets/d311cd7b-ff91-4724-8bf9-71c400c3182e)
 
-![image](https://github.com/user-attachments/assets/bdb543df-574d-4df8-964e-c183eae5bcb0)
+![image](https://github.com/user-attachments/assets/35323850-413f-4d66-ab24-83ea8134580e)
 
-![image](https://github.com/user-attachments/assets/91f58b50-7cf5-4964-9c76-c3e9c00d9883)
-
+![image](https://github.com/user-attachments/assets/d94c344d-d675-4d66-8ba4-3e4a32c4b9d3)
