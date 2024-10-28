@@ -98,7 +98,7 @@ plt.plot(train_sizes, train_scores_rmse, 'o-', color="r", label="Training RMSE")
 plt.plot(train_sizes, test_scores_rmse, 'o-', color="g", label="Cross-validation RMSE")
 
 # Thêm các nhãn và tiêu đề
-plt.title("Learning Curve with RMSE for Linear Regression")
+plt.title("Learning Curve with RMSE for Stacking")
 plt.xlabel("Training examples")
 plt.ylabel("RMSE")
 plt.legend(loc="best")
